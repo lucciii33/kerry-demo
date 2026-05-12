@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work With Kerry | Dr. Kerry Mitchell Brown</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+/* ════════════════════════════════════════════
+   KMB Consultancy — kerrymitchellbrown.com
+   Shared stylesheet for all pages
+   Brand: Restrained Authority
+════════════════════════════════════════════ */
+
+:root{
+  --charcoal:#1A1A2E;
+  --white:#FFFFFF;
+  --purple:#443777;
+  --gold:#FBD548;
+  --teal:#28B2A9;
+  --warm:#F5F4F0;
+  --mid:#E0DDD6;
+  --fd:'Bebas Neue',sans-serif;   /* display — swap → MADE Canvas Black */
+  --fs:'Josefin Sans',sans-serif; /* sub/labels/buttons */
+  --fb:'DM Sans',sans-serif;      /* body */
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--white);color:var(--charcoal);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+
+/* ━━━ BUTTONS ━━━ */
+.btn{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:15px 32px;display:inline-block;cursor:pointer;transition:all .22s;border-radius:1px;white-space:nowrap;border:none}
+.bg{background:var(--gold);color:var(--charcoal)}.bg:hover{background:#e8c22a}
+.bp{background:var(--purple);color:var(--white)}.bp:hover{background:#352c5e}
+.bw{border:1.5px solid rgba(255,255,255,.5);color:var(--white)}.bw:hover{background:rgba(255,255,255,.1)}
+.bt{border:1.5px solid var(--teal);color:var(--teal)}.bt:hover{background:rgba(40,178,169,.1)}
+.bd{background:var(--charcoal);color:var(--white)}.bd:hover{background:#000}
+
+.eyebrow{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--teal)}
+.slabel{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:14px}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+
+/* ━━━ NAV ━━━ */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:22px 48px;transition:background .35s,padding .3s}
+nav.stuck{background:rgba(26,26,46,.97);backdrop-filter:blur(12px);padding:14px 48px;border-bottom:1px solid rgba(255,255,255,.06)}
+nav.solid{background:rgba(26,26,46,.97);backdrop-filter:blur(12px);padding:14px 48px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nlogo{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white)}
+.nlogo b{color:var(--gold)}
+.nlinks{display:flex;align-items:center;gap:28px;list-style:none}
+.nlinks a{font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:color .2s}
+.nlinks a:hover{color:var(--white)}
+.nlinks a.active{color:var(--gold)}
+.ncta{background:var(--gold)!important;color:var(--charcoal)!important;padding:10px 20px;border-radius:1px;font-family:var(--fs)!important;font-size:10px!important;font-weight:700!important;letter-spacing:.14em!important;text-transform:uppercase!important}
+
+/* nav dropdown (CSS-only, hover & focus) */
+.has-dd{position:relative}
+.dd-t{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.dd-t::after{content:'';width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(255,255,255,.55);transition:transform .2s,border-top-color .2s}
+.has-dd:hover .dd-t::after,.has-dd:focus-within .dd-t::after{transform:rotate(180deg);border-top-color:var(--gold)}
+.dd-menu{position:absolute;top:100%;left:-14px;min-width:280px;background:rgba(26,26,46,.98);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-top:2px solid var(--gold);padding:10px 0;list-style:none;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s,transform .22s,visibility .22s;box-shadow:0 18px 40px rgba(0,0,0,.4);z-index:310}
+.has-dd:hover .dd-menu,.has-dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dd-menu li{margin:0}
+.dd-menu a{display:block;padding:11px 22px;font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:background .2s,color .2s;white-space:nowrap}
+.dd-menu a:hover{background:rgba(251,213,72,.08);color:var(--gold)}
+
+/* ━━━ HERO (homepage) ━━━ */
+.hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;overflow:hidden}
+.hero-vid{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-vid iframe,.hero-vid video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;border:none;object-fit:cover}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(115deg,rgba(26,26,46,.90) 0%,rgba(68,55,119,.50) 55%,rgba(26,26,46,.30) 100%)}
+.hero-ct{position:relative;z-index:2;padding:0 80px;max-width:860px}
+.he{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;opacity:0;animation:fu .8s .1s ease forwards}
+.hh{font-family:var(--fd);font-size:clamp(2rem,4vw,3.6rem);font-weight:400;letter-spacing:.01em;line-height:1.05;color:var(--white);margin-bottom:18px;opacity:0;animation:fu .8s .3s ease forwards}
+.hh em{color:var(--gold);font-style:normal}
+.hs{font-family:var(--fb);font-size:16px;font-weight:300;color:rgba(255,255,255,.78);max-width:480px;line-height:1.65;margin-bottom:12px;opacity:0;animation:fu .8s .5s ease forwards}
+.hst{font-family:var(--fs);font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:36px;opacity:0;animation:fu .8s .65s ease forwards}
+.hctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fu .8s .8s ease forwards}
+.hbar{position:absolute;bottom:0;left:80px;width:2px;height:68px;background:var(--teal);z-index:2}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* ━━━ PAGE HERO (interior pages) ━━━ */
+.phero{position:relative;background:var(--charcoal);padding:190px 0 110px;color:var(--white);overflow:hidden;min-height:520px;display:flex;align-items:flex-end}
+.phero.purple{background:var(--purple)}
+.phero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,var(--teal) 50%,var(--purple) 100%)}
+.phero-ct{position:relative;z-index:2;max-width:860px}
+.ph-eye{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.ph-h{font-family:var(--fd);font-size:clamp(2rem,4vw,3.4rem);font-weight:400;letter-spacing:.01em;line-height:1.05;color:var(--white);margin-bottom:22px}
+.ph-h em{color:var(--gold);font-style:normal}
+.ph-s{font-family:var(--fb);font-size:17px;font-weight:300;color:rgba(255,255,255,.78);max-width:640px;line-height:1.65;margin-bottom:32px}
+.phero::after{content:'';position:absolute;right:0;bottom:0;width:42vw;max-width:620px;height:100%;background:linear-gradient(145deg,rgba(251,213,72,.18),rgba(40,178,169,.16));clip-path:polygon(34% 0,100% 0,100% 100%,0 100%);pointer-events:none}
+.ph-glow{display:none}
+
+/* ━━━ AS SEEN IN ━━━ */
+.seen{background:var(--white);border-top:1px solid var(--mid);border-bottom:1px solid var(--mid);padding:30px 0}
+.seen-r{display:flex;align-items:center}
+.seen-l{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c0bdb6;white-space:nowrap;padding-right:32px;border-right:1px solid var(--mid);flex-shrink:0}
+.logos{display:flex;align-items:center;gap:32px;flex-wrap:wrap;padding-left:32px}
+.logo-i{opacity:.32;transition:opacity .2s;display:flex;align-items:center;flex-shrink:0}
+.logo-i:hover{opacity:.7}
+
+/* ━━━ DUAL PROBLEM ━━━ */
+.dual{display:grid;grid-template-columns:1fr 1fr}
+.dc{padding:80px 56px;position:relative}
+.dc.dark{background:var(--charcoal)}
+.dc.light{background:var(--warm)}
+.dc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.dc.dark::before{background:var(--teal)}
+.dc.light::before{background:var(--purple)}
+.dc .eyebrow{margin-bottom:16px}
+.dc-h{font-family:var(--fd);font-size:clamp(1.9rem,3vw,2.7rem);font-weight:400;letter-spacing:.01em;line-height:1.02;margin:16px 0 22px}
+.dc.dark .dc-h{color:var(--white)}
+.dc.light .dc-h{color:var(--charcoal)}
+.dc-p{font-size:15px;line-height:1.82;margin-bottom:14px}
+.dc.dark .dc-p{color:rgba(255,255,255,.62)}
+.dc.light .dc-p{color:#555}
+.dc-ul{list-style:none;margin:22px 0 34px}
+.dc-ul li{font-family:var(--fs);font-size:12px;font-weight:600;letter-spacing:.05em;display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid rgba(255,255,255,.07)}
+.dc.light .dc-ul li{border-top-color:rgba(0,0,0,.06)}
+.dc-ul li::before{content:'→';color:var(--teal)}
+.dc.dark .dc-ul li{color:rgba(255,255,255,.80)}
+.dc.light .dc-ul li{color:var(--charcoal)}
+
+/* ━━━ CREDENTIALS ━━━ */
+.creds{background:var(--charcoal);padding:80px 0 96px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.08)}
+.st{padding:44px 0;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.st:last-child{border-right:none}
+.st-n{font-family:var(--fd);font-size:clamp(2.8rem,4.5vw,4rem);font-weight:400;color:var(--gold);line-height:1;display:block;margin-bottom:8px}
+.st-l{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+.cg{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:start;padding-top:64px}
+.cphoto{position:relative;border-radius:2px;overflow:hidden;background:var(--purple);aspect-ratio:3/4;width:100%}
+.cpholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px}
+.cpholder svg{opacity:.18}
+.cpholder p{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);text-align:center;line-height:1.8}
+.cphoto::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+
+.cbio{padding-top:4px}
+.cred-h{font-family:var(--fd);font-size:clamp(2.2rem,3.8vw,3.4rem);font-weight:400;letter-spacing:.01em;line-height:1.0;color:var(--white);margin-bottom:26px}
+.cred-h em{color:var(--gold);font-style:normal}
+.cred-p{font-size:15px;line-height:1.85;color:rgba(255,255,255,.60);margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 34px}
+.badge{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border:1px solid rgba(40,178,169,.35);color:var(--teal);border-radius:1px}
+
+/* ━━━ SERVICES (homepage) ━━━ */
+.services{background:var(--white);padding:96px 0}
+.sh2{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4rem);font-weight:400;letter-spacing:.01em;line-height:1.0;color:var(--charcoal);margin-top:8px}
+.shdr{margin-bottom:52px}
+
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--mid)}
+.scard{padding:40px 30px;border-right:1px solid var(--mid);position:relative;transition:background .25s;overflow:hidden;display:flex;flex-direction:column}
+.scard:last-child{border-right:none}
+.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--mid);transition:background .25s}
+.scard:hover{background:var(--charcoal)}
+.scard:hover::before{background:var(--gold)}
+.scard:hover .snum{color:rgba(68,55,119,.3)}
+.scard:hover .saud{color:var(--teal)}
+.scard:hover .stit{color:var(--white)}
+.scard:hover .sbod{color:rgba(255,255,255,.55)}
+.scard:hover .slnk{color:var(--gold)}
+.snum{font-family:var(--fd);font-size:3.2rem;font-weight:400;color:var(--mid);line-height:1;margin-bottom:24px;transition:color .25s}
+.saud{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.stit{font-family:var(--fd);font-size:1.5rem;font-weight:400;letter-spacing:.01em;line-height:1.05;color:var(--charcoal);margin-bottom:14px;transition:color .25s}
+.sbod{font-size:13.5px;line-height:1.75;color:#777;margin-bottom:22px;transition:color .25s;flex:1}
+.slnk{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);display:flex;align-items:center;gap:6px;transition:color .25s}
+
+/* ━━━ RL BRIDGE ━━━ */
+.rl{background:var(--purple);padding:52px 0}
+.rlg{display:grid;grid-template-columns:160px 1fr 280px;gap:48px;align-items:center}
+.rlbook{background:var(--charcoal);border-radius:2px;border-left:6px solid var(--gold);padding:20px 16px 20px 20px;box-shadow:10px 10px 40px rgba(0,0,0,.45);aspect-ratio:2/3;display:flex;flex-direction:column;justify-content:space-between}
+.rlt{font-family:var(--fd);font-size:1.4rem;font-weight:400;letter-spacing:.01em;color:var(--white);line-height:1.05}
+.rls{font-family:var(--fs);font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:8px}
+.rla{font-family:var(--fs);font-size:8px;letter-spacing:.1em;color:rgba(255,255,255,.38)}
+.rl-copy .slabel{color:var(--gold)}
+.rlh{font-family:var(--fd);font-size:clamp(1.7rem,2.5vw,2.3rem);font-weight:400;letter-spacing:.01em;line-height:1.02;color:var(--white);margin-bottom:12px}
+.rlp{font-size:14px;line-height:1.75;color:rgba(255,255,255,.62);margin-bottom:10px}
+.rlpub{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.rlctas{display:flex;gap:12px;flex-wrap:wrap}
+.ends{display:flex;flex-direction:column;gap:10px}
+.eq{background:rgba(251,213,72,.12);border-left:3px solid var(--gold);padding:12px 14px;border-radius:0 2px 2px 0}
+.eqq{font-family:var(--fb);font-size:12px;font-style:italic;color:rgba(255,255,255,.88);line-height:1.45;margin-bottom:6px}
+.eqn{font-family:var(--fs);font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.75}
+
+/* ━━━ TESTIMONIALS ━━━ */
+.testi{background:var(--warm);padding:96px 0}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.tc{background:var(--white);padding:44px 40px;border-bottom:3px solid transparent;transition:border-color .25s}
+.tc:hover{border-color:var(--teal)}
+
+/* testimonials slider (CSS-only scroll-snap, no JS) */
+.tslider{position:relative;margin-top:8px}
+.tslider .tgrid{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 4px 28px;margin:0 -4px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--teal) transparent}
+.tslider .tgrid::-webkit-scrollbar{height:6px}
+.tslider .tgrid::-webkit-scrollbar-track{background:rgba(0,0,0,.05);border-radius:3px}
+.tslider .tgrid::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px}
+.tslider .tc{flex:0 0 calc(50% - 12px);scroll-snap-align:start;min-width:300px}
+.tslider .tc:first-child{scroll-snap-align:start}
+.thint{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#bbb;display:flex;align-items:center;gap:8px;margin-top:6px}
+.thint::before{content:'⇆';font-size:13px;color:var(--teal)}
+@media(max-width:1024px){
+  .tslider .tc{flex:0 0 calc(85% - 12px)}
+}
+
+/* signature talks accordion (HTML <details>) */
+.talk-acc{border-top:1px solid var(--mid)}
+.talk-acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:80px 1fr auto;gap:24px;padding:26px 4px;border-bottom:1px solid var(--mid);align-items:center;transition:background .2s}
+.talk-acc summary::-webkit-details-marker{display:none}
+.talk-acc summary::marker{display:none}
+.talk-acc summary:hover{background:var(--warm)}
+.talk-acc[open] summary{background:var(--warm);border-bottom-color:transparent}
+.talk-acc .talk-n{font-family:var(--fd);font-size:2.4rem;color:var(--gold);line-height:1}
+.talk-acc .talk-head{display:flex;flex-direction:column;gap:6px}
+.talk-acc .talk-head .talk-h{font-family:var(--fd);font-size:1.4rem;line-height:1.1;letter-spacing:.01em;color:var(--charcoal);margin:0}
+.talk-acc .talk-head .talk-sub{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:0}
+.talk-tog{font-family:var(--fs);font-size:18px;color:var(--purple);width:36px;height:36px;border:1px solid var(--mid);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:transform .25s,background .2s,color .2s,border-color .2s}
+.talk-acc[open] .talk-tog{transform:rotate(45deg);background:var(--purple);color:var(--white);border-color:var(--purple)}
+.talk-acc .talk-body{padding:8px 4px 28px 112px;border-bottom:1px solid var(--mid);background:var(--warm)}
+.talk-acc .talk-body p{font-size:14.5px;line-height:1.78;color:#555;margin-bottom:12px}
+.talk-acc .talk-body .talk-aud{font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#999}
+.talk-acc .talk-body .talk-aud b{color:var(--charcoal);font-weight:700;letter-spacing:.16em;margin-right:8px}
+@media(max-width:1024px){
+  .talk-acc summary{grid-template-columns:50px 1fr auto;gap:16px}
+  .talk-acc .talk-body{padding-left:18px}
+}
+.tmark{font-family:var(--fd);font-size:72px;color:var(--gold);line-height:.6;margin-bottom:20px;display:block}
+.tq{font-size:15px;font-style:italic;line-height:1.8;color:#444;margin-bottom:24px}
+.ta strong{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);display:block;margin-bottom:3px}
+.ta span{font-size:13px;color:#999}
+.tph{background:var(--white);padding:44px 40px;border:2px dashed var(--mid);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;min-height:220px}
+.tph p{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c8c4bc}
+.tcta{text-align:center;margin-top:52px}
+
+/* ━━━ WORK WITH ━━━ */
+.work{background:var(--charcoal);padding:96px 0}
+.wcards{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:52px}
+.wc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:52px 48px;transition:background .25s}
+.wc:hover{background:rgba(255,255,255,.08)}
+.wc .eyebrow{margin-bottom:16px}
+.wch{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;letter-spacing:.01em;line-height:1.02;color:var(--white);margin-bottom:18px}
+.wcp{font-size:14px;line-height:1.78;color:rgba(255,255,255,.55);margin-bottom:32px}
+
+/* ━━━ FOOTER ━━━ */
+footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);padding:52px 0}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:52px;margin-bottom:40px}
+.fbrand{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:10px}
+.fbrand b{color:var(--gold)}
+.ftag{font-size:13px;line-height:1.65;color:rgba(255,255,255,.35);margin-bottom:20px}
+.fsoc{display:flex;gap:8px}
+.fsoc a{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.08em;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.42);transition:all .2s;border-radius:1px}
+.fsoc a:hover{border-color:var(--gold);color:var(--gold)}
+.fc h4{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px}
+.fc ul{list-style:none}
+.fc ul li{margin-bottom:8px}
+.fc ul li a{font-size:13px;color:rgba(255,255,255,.48);transition:color .2s}
+.fc ul li a:hover{color:var(--white)}
+.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fbot p{font-family:var(--fs);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.fbot a{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+
+/* ━━━ GENERIC SECTIONS ━━━ */
+section.sec{padding:96px 0;background:var(--white)}
+section.sec.warm{background:var(--warm)}
+section.sec.dark{background:var(--charcoal);color:var(--white)}
+section.sec.purple{background:var(--purple);color:var(--white)}
+.sec-h{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:400;letter-spacing:.01em;line-height:1.04;color:var(--charcoal);margin-bottom:18px}
+.sec.dark .sec-h,.sec.purple .sec-h{color:var(--white)}
+.sec-h em{color:var(--gold);font-style:normal}
+.sec-sub{font-size:16px;line-height:1.78;color:#555;max-width:780px;margin-bottom:36px}
+.sec.dark .sec-sub,.sec.purple .sec-sub{color:rgba(255,255,255,.62)}
+.sec-body p{font-size:15.5px;line-height:1.85;margin-bottom:16px;color:#444}
+.sec.dark .sec-body p,.sec.purple .sec-body p{color:rgba(255,255,255,.7)}
+
+/* prose lists */
+.plist{list-style:none;margin:18px 0 28px}
+.plist li{font-size:15px;line-height:1.7;padding:10px 0 10px 26px;position:relative;color:#444;border-top:1px solid var(--mid)}
+.plist li:first-child{border-top:none}
+.plist li::before{content:'→';position:absolute;left:0;top:10px;color:var(--teal);font-weight:700}
+.sec.dark .plist li,.sec.purple .plist li{color:rgba(255,255,255,.78);border-top-color:rgba(255,255,255,.08)}
+
+.subhead{font-family:var(--fd);font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:400;letter-spacing:.01em;line-height:1.1;margin:36px 0 14px;color:var(--charcoal)}
+.sec.dark .subhead,.sec.purple .subhead{color:var(--white)}
+.subhead em{color:var(--gold);font-style:normal}
+
+/* ━━━ TWO-COLUMN LAYOUTS ━━━ */
+.tcol{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.tcol.bias-left{grid-template-columns:1.3fr 1fr}
+.tcol.bias-right{grid-template-columns:1fr 1.3fr}
+
+/* photo card */
+.pcard{position:relative;background:var(--purple);aspect-ratio:3/4;overflow:hidden;border-radius:2px}
+.pcard.wide{aspect-ratio:4/3}
+.pcard.kerry-photo{
+  background-image:linear-gradient(135deg,rgba(68,55,119,.7) 0%,rgba(26,26,46,.85) 100%),
+                   url('https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=800&auto=format');
+  background-size:cover;
+  background-position:center top;
+}
+.pcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+.pcard-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center}
+.pcard-ph svg{opacity:.22}
+.pcard-ph p{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.34);line-height:1.8}
+
+/* ━━━ TALK CARDS (Speaking page) ━━━ */
+.talks{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--mid)}
+.talk{display:grid;grid-template-columns:80px 1fr 240px;gap:32px;padding:34px 4px;border-bottom:1px solid var(--mid);align-items:start;transition:background .2s}
+.talk:hover{background:var(--warm)}
+.talk-n{font-family:var(--fd);font-size:2.6rem;color:var(--gold);line-height:1}
+.talk-h{font-family:var(--fd);font-size:1.5rem;line-height:1.1;letter-spacing:.01em;color:var(--charcoal);margin-bottom:8px}
+.talk-sub{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.talk-p{font-size:14.5px;line-height:1.75;color:#555}
+.talk-aud{font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#999;line-height:1.6}
+.talk-aud b{display:block;color:var(--charcoal);font-weight:700;letter-spacing:.16em;margin-bottom:6px}
+
+/* ━━━ FORMAT PILLS ━━━ */
+.formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+.fmt{padding:24px 22px;background:var(--warm);border-left:3px solid var(--teal);border-radius:0 2px 2px 0}
+.fmt h4{font-family:var(--fd);font-size:1.15rem;line-height:1.1;color:var(--charcoal);margin-bottom:6px}
+.fmt p{font-size:13.5px;line-height:1.65;color:#666}
+
+/* ━━━ SECTOR CARDS (Org Transformation) ━━━ */
+.sectors{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--mid);margin-top:32px}
+.sec-card{background:var(--white);padding:38px 32px;position:relative;transition:background .25s}
+.sec-card.primary{background:var(--charcoal);color:var(--white)}
+.sec-card.primary .sec-card-h{color:var(--white)}
+.sec-card.primary .sec-card-p{color:rgba(255,255,255,.65)}
+.sec-card-tag{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec-card-tag .pri{background:var(--gold);color:var(--charcoal);padding:3px 7px;font-size:8px;letter-spacing:.16em;border-radius:1px}
+.sec-card-h{font-family:var(--fd);font-size:1.45rem;line-height:1.1;color:var(--charcoal);margin-bottom:10px}
+.sec-card-p{font-size:14px;line-height:1.7;color:#555}
+
+/* ━━━ NEWS LIST ━━━ */
+.newslist{display:grid;grid-template-columns:1fr;gap:0;margin-top:8px}
+.nitem{display:grid;grid-template-columns:120px 1fr 180px;gap:32px;padding:24px 4px;border-bottom:1px solid var(--mid);align-items:center;transition:background .2s,padding .2s;cursor:pointer}
+.nitem:hover{background:var(--warm);padding-left:14px}
+.ndate{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999}
+.ntitle{font-family:var(--fd);font-size:1.2rem;line-height:1.2;color:var(--charcoal)}
+.nsource{font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);text-align:right}
+
+/* news filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 8px}
+.filter{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--mid);background:transparent;cursor:pointer;color:#666;transition:all .2s;border-radius:1px}
+.filter:hover{border-color:var(--charcoal);color:var(--charcoal)}
+.filter.on{background:var(--charcoal);color:var(--white);border-color:var(--charcoal)}
+
+/* ━━━ NEWS CARDS (v2) ━━━ */
+.ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px}
+.ncard{background:var(--white);border:1px solid var(--mid);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;cursor:pointer}
+.ncard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,26,46,.10)}
+.ncard-img{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--purple) 0%,var(--charcoal) 100%);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ncard-img::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(251,213,72,.18),transparent 55%)}
+.ncard-img .nph{position:relative;z-index:1;font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:center;padding:14px}
+.ncard-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--charcoal);font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;z-index:2;border-radius:1px}
+.ncard-body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ncard-date{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#999}
+.ncard-title{font-family:var(--fd);font-size:1.25rem;line-height:1.18;color:var(--charcoal);letter-spacing:.01em}
+.ncard-source{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-top:auto;padding-top:10px;border-top:1px solid var(--mid)}
+@media(max-width:1024px){.ngrid{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media(max-width:640px){.ngrid{grid-template-columns:1fr}}
+
+/* ━━━ ASSESSMENT ━━━ */
+.assess-box{background:var(--warm);padding:48px;border-left:5px solid var(--gold);margin-top:24px}
+.assess-box h3{font-family:var(--fd);font-size:1.6rem;color:var(--charcoal);margin-bottom:14px}
+
+/* ━━━ CONTACT FORM ━━━ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.07)}
+.cform{background:var(--charcoal);padding:48px}
+.cform.alt{background:#13132a}
+.cform h3{font-family:var(--fd);font-size:1.7rem;color:var(--white);line-height:1.1;margin-bottom:8px}
+.cform .eyebrow{margin-bottom:14px}
+.cform p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:24px}
+.cform label{display:block;font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:18px 0 6px}
+.cform input,.cform select,.cform textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--white);font-family:var(--fb);font-size:14px;border-radius:1px;outline:none;transition:border-color .2s}
+.cform input:focus,.cform select:focus,.cform textarea:focus{border-color:var(--gold)}
+.cform textarea{resize:vertical;min-height:90px}
+.cform .btn{margin-top:24px;width:100%}
+
+/* ━━━ SERVICES INDEX ━━━ */
+.svc-list{display:grid;grid-template-columns:1fr;gap:2px;margin-top:32px;background:var(--mid)}
+.svc-row{background:var(--white);padding:38px 40px;display:grid;grid-template-columns:60px 1fr 180px;gap:32px;align-items:center;transition:all .25s;cursor:pointer}
+.svc-row:hover{background:var(--charcoal);color:var(--white)}
+.svc-row:hover .svc-h{color:var(--white)}
+.svc-row:hover .svc-p{color:rgba(255,255,255,.65)}
+.svc-row:hover .svc-arrow{color:var(--gold);transform:translateX(8px)}
+.svc-num{font-family:var(--fd);font-size:2.4rem;color:var(--mid);line-height:1;transition:color .25s}
+.svc-row:hover .svc-num{color:rgba(251,213,72,.4)}
+.svc-tag{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.svc-h{font-family:var(--fd);font-size:1.5rem;line-height:1.1;color:var(--charcoal);margin-bottom:6px;transition:color .25s}
+.svc-p{font-size:14px;line-height:1.7;color:#666;transition:color .25s}
+.svc-arrow{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--purple);text-align:right;transition:all .25s}
+
+/* ━━━ MOBILE ━━━ */
+@media(max-width:1024px){
+  .dual,.cg,.rlg,.wcards,.fg,.tcol,.tcol.bias-left,.tcol.bias-right,.contact-grid,.sectors{grid-template-columns:1fr}
+  .sgrid{grid-template-columns:repeat(2,1fr)}
+  .tgrid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .hero-ct{padding:0 36px}
+  nav{padding:16px 24px}
+  .nlinks{display:none}
+  .talk{grid-template-columns:60px 1fr}
+  .talk-aud{grid-column:1/-1;border-top:1px solid var(--mid);padding-top:14px}
+  .nitem{grid-template-columns:90px 1fr;gap:14px}
+  .nsource{grid-column:1/-1;text-align:left}
+  .svc-row{grid-template-columns:50px 1fr;gap:18px}
+  .svc-arrow{grid-column:1/-1;text-align:left;margin-top:8px}
+}
+@media(max-width:640px){
+  .sgrid{grid-template-columns:1fr}
+  .wrap{padding:0 20px}
+  .dc{padding:52px 24px}
+  .phero{padding:130px 0 60px}
+  .cform{padding:32px 24px}
+  .assess-box{padding:32px 24px}
+}
+
+</style>
+</head>
+<body>
+  <nav id="nav" class="solid">
+    <a class="nlogo" href="index.html">Dr. Kerry <b>Mitchell Brown</b></a>
+    <ul class="nlinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dd" tabindex="0">
+          <a href="services.html" class="dd-t">Services</a>
+          <ul class="dd-menu">
+            <li><a href="organizational-transformation.html">Organizational Transformation</a></li>
+            <li><a href="strategic-advising.html">Strategic Advising</a></li>
+            <li><a href="black-womens-leadership.html">Black Women's Leadership</a></li>
+            <li><a href="speaking-and-workshops.html">Speaking &amp; Workshops</a></li>
+          </ul>
+        </li>
+        <li class="has-dd" tabindex="0">
+          <a href="news.html" class="dd-t">News</a>
+          <ul class="dd-menu">
+            <li><a href="news.html">News</a></li>
+            <li><a href="news_02.html">News 2</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="ncta active">Work With Kerry</a></li>
+    </ul>
+  </nav>
+
+  <header class="phero">
+    <div class="ph-glow"></div>
+    <div class="wrap">
+      <div class="phero-ct">
+        <p class="ph-eye">Work With Dr. Brown</p>
+        <h1 class="ph-h">The Work Starts With a <em>Conversation.</em></h1>
+        <p class="ph-s">Every engagement begins with a focused conversation about where you are, what is not working, and what transformation actually requires.</p>
+        
+      </div>
+    </div>
+  </header>
+  <section class="work">
+    <div class="wrap">
+      <div class="shdr" style="text-align:center">
+        <span class="slabel" style="color:var(--gold)">Two Pathways</span>
+        <h2 class="sh2" style="color:var(--white)">Choose the Conversation That Matches the Work.</h2>
+      </div>
+      <div class="contact-grid">
+        <form class="cform">
+          <span class="eyebrow">For Organizations</span>
+          <h3>Start the Conversation</h3>
+          <p>Ready to address the structural dynamics driving turnover, misalignment, or cultural dysfunction? Let's talk about what your organization actually needs.</p>
+          <label>Organization Name</label><input type="text">
+          <label>Sector</label><select><option>Corporate</option><option>Nonprofit</option><option>Government</option><option>Social Impact</option><option>Justice / Advocacy</option></select>
+          <label>Current Size</label><select><option>Under 100 employees</option><option>100-500 employees</option><option>500-1,000 employees</option><option>1,000+ employees</option></select>
+          <label>Primary Challenge</label><select><option>Retention / turnover</option><option>Culture transformation</option><option>Leadership alignment</option><option>Systems & operations</option><option>Speaking / workshop</option><option>Other</option></select>
+          <label>Budget Range</label><select><option>Under $10K</option><option>$10K-$25K</option><option>$25K-$75K</option><option>$75K-$200K</option><option>$200K+</option><option>Not yet determined</option></select>
+          <label>Timeline for Engaging Support</label><input type="text">
+          <label>How did you hear about Dr. Brown?</label><input type="text">
+          <button class="btn bg" type="button">Start the Conversation</button>
+        </form>
+        <form class="cform alt">
+          <span class="eyebrow">For Black Women Leaders</span>
+          <h3>Book Your Consultation</h3>
+          <p>Ready to build real power and lead from your full authority? Let's talk about where you are and what the next level of your leadership requires.</p>
+          <label>Current Role</label><input type="text">
+          <label>Organization Type</label><input type="text">
+          <label>Primary Challenge</label><select><option>Advancement</option><option>Burnout & sustainability</option><option>Navigating hostile environments</option><option>Building influence</option><option>Other</option></select>
+          <label>Have you worked with a leadership coach or consultant before?</label><select><option>Yes</option><option>No</option><option>Prefer to discuss</option></select>
+          <label>What would success look like in 6 months?</label><textarea></textarea>
+          <label>How did you hear about Dr. Brown?</label><input type="text">
+          <button class="btn bg" type="button">Book Your Consultation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="sec warm">
+    <div class="wrap tcol">
+      <div>
+        <span class="slabel">Routing Note</span>
+        <h2 class="sec-h">The Consultation Should Match the Scope.</h2>
+        <p class="sec-sub">The brief notes that organizational inquiries under $10K or not yet determined should route to the Organizational Assessment or Resources page rather than a full consultation.</p>
+      </div>
+      <div>
+        <span class="slabel">Direct Contact</span>
+        <h2 class="sec-h">Contact KMB</h2>
+        <ul class="plist"><li><a href="tel:+13125095578">+1 (312) 509-5578</a></li><li><a href="mailto:info@kerrymitchellbrown.com">info@kerrymitchellbrown.com</a></li><li><a href="assessment.html">Organizational Leadership Assessment</a></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fg">
+        <div>
+          <div class="fbrand">Dr. Kerry <b>Mitchell Brown</b></div>
+          <p class="ftag">CEO, kmb Consultancy - Organizational Transformation Consultant - Author - Researcher</p>
+          <div class="fsoc">
+            <a href="https://www.linkedin.com">LI</a><a href="https://substack.com">SS</a><a href="https://www.youtube.com">YT</a>
+          </div>
+        </div>
+        <div class="fc">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="client-impact.html">Client Impact</a></li>
+            <li><a href="assessment.html">Resources</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Work With Kerry</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="organizational-transformation.html">Organizational Transformation</a></li>
+            <li><a href="strategic-advising.html">Strategic Advising</a></li>
+            <li><a href="black-womens-leadership.html">Black Women's Leadership</a></li>
+            <li><a href="speaking-and-workshops.html">Speaking & Workshops</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fbot">
+        <p>© 2026 Kerry Mitchell Brown, LLC. All rights reserved.</p>
+        <a href="https://revolutionarylead.com">Revolutionary Leadership</a>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>
