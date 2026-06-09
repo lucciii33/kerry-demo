@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caribbean Cultural Identity at Work | Dr. Kerry Mitchell Brown</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --charcoal:#1A1A2E;
+  --white:#FFFFFF;
+  --purple:#443777;
+  --gold:#FBD548;
+  --teal:#28B2A9;
+  --warm:#F5F4F0;
+  --mid:#E0DDD6;
+  --fd:'Bebas Neue',sans-serif;
+  --fs:'Josefin Sans',sans-serif;
+  --fb:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--white);color:var(--charcoal);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+
+/* BUTTONS */
+.btn{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:15px 32px;display:inline-block;cursor:pointer;transition:all .22s;border-radius:1px;white-space:nowrap;border:none}
+.bg{background:var(--gold);color:var(--charcoal)}.bg:hover{background:#e8c22a}
+.bp{background:var(--purple);color:var(--white)}.bp:hover{background:#352c5e}
+.bw{border:1.5px solid rgba(255,255,255,.5);color:var(--white)}.bw:hover{background:rgba(255,255,255,.1)}
+.eyebrow{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--teal)}
+.slabel{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:14px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:22px 48px;transition:background .35s,padding .3s}
+nav.stuck{background:rgba(26,26,46,.97);backdrop-filter:blur(12px);padding:14px 48px;border-bottom:1px solid rgba(255,255,255,.06)}
+nav.solid{background:rgba(26,26,46,.97);backdrop-filter:blur(12px);padding:14px 48px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nlogo{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white)}
+.nlogo b{color:var(--gold)}
+.nlinks{display:flex;align-items:center;gap:28px;list-style:none}
+.nlinks a{font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:color .2s}
+.nlinks a:hover{color:var(--white)}
+.nlinks a.active{color:var(--gold)}
+.ncta{background:var(--gold)!important;color:var(--charcoal)!important;padding:10px 20px;border-radius:1px;font-family:var(--fs)!important;font-size:10px!important;font-weight:700!important;letter-spacing:.14em!important;text-transform:uppercase!important}
+.has-dd{position:relative}
+.dd-t{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.dd-t::after{content:'';width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(255,255,255,.55);transition:transform .2s,border-top-color .2s}
+.has-dd:hover .dd-t::after,.has-dd:focus-within .dd-t::after{transform:rotate(180deg);border-top-color:var(--gold)}
+.dd-menu{position:absolute;top:100%;left:-14px;min-width:280px;background:rgba(26,26,46,.98);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-top:2px solid var(--gold);padding:10px 0;list-style:none;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s,transform .22s,visibility .22s;box-shadow:0 18px 40px rgba(0,0,0,.4);z-index:310}
+.has-dd:hover .dd-menu,.has-dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dd-menu li{margin:0}
+.dd-menu a{display:block;padding:11px 22px;font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:background .2s,color .2s;white-space:nowrap}
+.dd-menu a:hover{background:rgba(251,213,72,.08);color:var(--gold)}
+
+/* ARTICLE HERO */
+.art-hero{background:var(--charcoal);padding:180px 0 80px;position:relative;overflow:hidden}
+.art-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,var(--teal) 50%,var(--purple) 100%)}
+.art-hero::after{content:'';position:absolute;right:0;bottom:0;width:50vw;max-width:700px;height:100%;background:linear-gradient(145deg,rgba(251,213,72,.10),rgba(40,178,169,.08));clip-path:polygon(34% 0,100% 0,100% 100%,0 100%);pointer-events:none}
+.art-hero-inner{position:relative;z-index:2;max-width:900px}
+.art-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:32px;transition:color .2s}
+.art-back:hover{color:var(--gold)}
+.art-back::before{content:'←';font-size:14px}
+.art-tag{display:inline-block;background:var(--gold);color:var(--charcoal);font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:5px 12px;border-radius:1px;margin-bottom:20px}
+.art-h1{font-family:var(--fd);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:400;letter-spacing:.01em;line-height:1.02;color:var(--white);margin-bottom:28px}
+.art-h1 em{color:var(--gold);font-style:normal}
+.art-meta{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.art-meta-item{font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);padding-right:20px;margin-right:20px;border-right:1px solid rgba(255,255,255,.14)}
+.art-meta-item:last-child{border-right:none;padding-right:0;margin-right:0}
+.art-meta-item.source{color:var(--teal)}
+
+/* ARTICLE LAYOUT */
+.art-layout{display:grid;grid-template-columns:1fr 320px;gap:64px;padding:80px 0 96px;align-items:start}
+
+/* ARTICLE BODY */
+.art-body{}
+.art-lead{font-size:19px;font-weight:400;line-height:1.7;color:#333;margin-bottom:36px;padding-bottom:36px;border-bottom:2px solid var(--gold);max-width:680px}
+.art-body h2{font-family:var(--fd);font-size:1.8rem;font-weight:400;letter-spacing:.01em;line-height:1.1;color:var(--charcoal);margin:44px 0 16px}
+.art-body h2 em{color:var(--gold);font-style:normal}
+.art-body p{font-size:16px;line-height:1.85;color:#444;margin-bottom:20px;max-width:680px}
+.art-pullquote{background:var(--charcoal);padding:36px 40px;margin:44px 0;border-left:4px solid var(--gold);position:relative}
+.art-pullquote::before{content:'\201C';font-family:var(--fd);font-size:5rem;color:var(--gold);line-height:.6;position:absolute;top:24px;left:36px;opacity:.35}
+.art-pullquote p{font-family:var(--fb);font-size:18px;font-style:italic;line-height:1.65;color:var(--white);margin:0;padding-left:0;max-width:100%}
+.art-pullquote cite{display:block;font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:16px;font-style:normal}
+.art-divider{width:60px;height:3px;background:var(--teal);margin:44px 0}
+
+/* SIDEBAR */
+.art-sidebar{}
+.art-sidebar-box{background:var(--warm);padding:28px 28px 32px;border-top:3px solid var(--gold);margin-bottom:24px}
+.art-sidebar-box h4{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.art-author{display:flex;align-items:center;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--mid);margin-bottom:16px}
+.art-author-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--charcoal));flex-shrink:0;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.art-author-avatar svg{opacity:.6}
+.art-author-name{font-family:var(--fd);font-size:1.1rem;letter-spacing:.01em;color:var(--charcoal);line-height:1.1;margin-bottom:3px}
+.art-author-title{font-family:var(--fs);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#999}
+.art-author-bio{font-size:13.5px;line-height:1.65;color:#666}
+
+.art-share h4{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.art-share-links{display:flex;gap:8px;flex-wrap:wrap}
+.share-btn{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border:1px solid var(--mid);color:#666;border-radius:1px;cursor:pointer;transition:all .2s;background:transparent}
+.share-btn:hover{border-color:var(--charcoal);color:var(--charcoal);background:var(--warm)}
+
+.art-sidebar-related{}
+.art-sidebar-related h4{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.rel-item{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--mid);align-items:start;cursor:pointer;transition:opacity .2s}
+.rel-item:hover{opacity:.7}
+.rel-item:last-child{border-bottom:none}
+.rel-num{font-family:var(--fd);font-size:1.6rem;color:var(--mid);line-height:1;padding-top:2px}
+.rel-title{font-family:var(--fd);font-size:.95rem;line-height:1.15;color:var(--charcoal);margin-bottom:4px}
+.rel-source{font-family:var(--fs);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+
+/* MORE NEWS SECTION */
+.more-news{background:var(--warm);padding:80px 0}
+.more-news .slabel{margin-bottom:10px}
+.more-news .sec-h{font-family:var(--fd);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;letter-spacing:.01em;line-height:1.04;color:var(--charcoal);margin-bottom:40px}
+.more-news .sec-h em{color:var(--gold);font-style:normal}
+.newslist-mini{display:grid;grid-template-columns:1fr;gap:0}
+.nitem{display:grid;grid-template-columns:120px 1fr 180px;gap:32px;padding:22px 4px;border-bottom:1px solid var(--mid);align-items:center;transition:background .2s,padding .2s;cursor:pointer;text-decoration:none;color:inherit}
+.nitem:hover{background:var(--white);padding-left:14px}
+.ndate{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999}
+.ntitle{font-family:var(--fd);font-size:1.15rem;line-height:1.2;color:var(--charcoal)}
+.nsource{font-family:var(--fs);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);text-align:right}
+
+/* FOOTER */
+footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);padding:52px 0}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:52px;margin-bottom:40px}
+.fbrand{font-family:var(--fs);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:10px}
+.fbrand b{color:var(--gold)}
+.ftag{font-size:13px;line-height:1.65;color:rgba(255,255,255,.35);margin-bottom:20px}
+.fsoc{display:flex;gap:8px}
+.fsoc a{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.08em;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.42);transition:all .2s;border-radius:1px}
+.fsoc a:hover{border-color:var(--gold);color:var(--gold)}
+.fc h4{font-family:var(--fs);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px}
+.fc ul{list-style:none}
+.fc ul li{margin-bottom:8px}
+.fc ul li a{font-size:13px;color:rgba(255,255,255,.48);transition:color .2s}
+.fc ul li a:hover{color:var(--white)}
+.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fbot p{font-family:var(--fs);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.fbot a{font-family:var(--fs);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+
+/* MOBILE */
+@media(max-width:1024px){
+  .art-layout{grid-template-columns:1fr;gap:48px}
+  .art-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .art-sidebar-related{grid-column:1/-1}
+  nav{padding:16px 24px}
+  .nlinks{display:none}
+  .nitem{grid-template-columns:90px 1fr;gap:14px}
+  .nsource{grid-column:1/-1;text-align:left}
+  .fg{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  .art-hero{padding:150px 0 60px}
+  .art-pullquote{padding:28px 24px}
+  .art-sidebar{grid-template-columns:1fr}
+}
+  </style>
+</head>
+<body>
+
+  <nav id="nav" class="solid">
+    <a class="nlogo" href="index.html">Dr. Kerry <b>Mitchell Brown</b></a>
+    <ul class="nlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="https://revolutionarylead.com">Revolutionary Leadership</a></li>
+      <li class="has-dd" tabindex="0">
+        <a href="services.html" class="dd-t">Services</a>
+        <ul class="dd-menu">
+          <li><a href="organizational-transformation.html">Organizational Transformation</a></li>
+          <li><a href="strategic-advising.html">Strategic Advising</a></li>
+          <li><a href="black-womens-leadership.html">Black Women's Leadership</a></li>
+          <li><a href="speaking-and-workshops.html">Speaking &amp; Workshops</a></li>
+        </ul>
+      </li>
+      <li><a href="client-impact.html">Client Impact</a></li>
+      <li><a href="assessment.html">Resources</a></li>
+      <li class="has-dd" tabindex="0">
+        <a href="news.html" class="dd-t active">News</a>
+        <ul class="dd-menu">
+          <li><a href="news.html">News</a></li>
+          <li><a href="news_02.html">News 2</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html" class="ncta">Work With Kerry</a></li>
+    </ul>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <header class="art-hero">
+    <div class="wrap">
+      <div class="art-hero-inner">
+        <a href="news.html" class="art-back">Back to News</a>
+        <div class="art-tag">Podcast</div>
+        <h1 class="art-h1">Caribbean Cultural Identity at Work:<br><em>A Hidden Leadership Advantage</em></h1>
+        <div class="art-meta">
+          <span class="art-meta-item">Jun 24, 2025</span>
+          <span class="art-meta-item source">Carry On Friends</span>
+          <span class="art-meta-item">Dr. Kerry Mitchell Brown</span>
+          <span class="art-meta-item">8 min read</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE CONTENT -->
+  <div class="wrap">
+    <div class="art-layout">
+
+      <!-- BODY -->
+      <article class="art-body">
+        <p class="art-lead">
+          For Caribbean American professionals navigating corporate America, cultural identity has long been treated as something to soften, translate, or leave at the door. Dr. Kerry Mitchell Brown argues the opposite — that this identity is a strategic leadership asset hiding in plain sight.
+        </p>
+
+        <p>
+          In a recent conversation on <em>Carry On Friends</em>, Dr. Brown unpacked the ways Caribbean upbringing cultivates a distinct leadership orientation — one defined by collectivism, resilience, code-switching mastery, and a long-horizon view of success that many organizations desperately need but rarely know how to name.
+        </p>
+
+        <p>
+          "We grew up watching our parents navigate systems that were not designed for them," she explained. "That teaches you something about strategic patience, about reading rooms, about understanding power — not as something handed to you, but as something you build."
+        </p>
+
+        <div class="art-pullquote">
+          <p>The qualities corporations say they want — adaptability, cultural intelligence, community orientation — are exactly what Caribbean American women have been developing their entire lives. The question is whether organizations are willing to recognize it as expertise.</p>
+          <cite>— Dr. Kerry Mitchell Brown</cite>
+        </div>
+
+        <h2>The <em>Code-Switch</em> as Competitive Intelligence</h2>
+
+        <p>
+          One of the most compelling threads in the conversation was the reframing of code-switching — a survival skill often discussed as a burden — as a form of competitive intelligence. Caribbean professionals, Dr. Brown noted, grow up navigating multiple cultural registers simultaneously: the household, the island diaspora, American professional culture, and often the specific micro-cultures of their industries.
+        </p>
+
+        <p>
+          This is not a deficit. It is, she argued, a form of organizational agility that translates directly into effective leadership in complex, cross-cultural environments. The ability to read a room, shift register, and communicate across difference is not something that can be trained in a weekend workshop. It is built over a lifetime.
+        </p>
+
+        <div class="art-divider"></div>
+
+        <h2>What Organizations Miss When They Miss <em>This</em></h2>
+
+        <p>
+          Dr. Brown was clear that the failure is rarely one of individual ambition. Caribbean American women enter organizations with credentials, drive, and an unusually sophisticated understanding of navigating systems. The failure, she said, is structural — companies that mistake cultural difference for a lack of fit, rather than an untapped leadership signal.
+        </p>
+
+        <p>
+          "When an organization says someone isn't 'executive presence' material, it's worth asking: whose presence are we measuring against? Because presence isn't neutral. It was defined by a very specific kind of person in a very specific moment in history."
+        </p>
+
+        <p>
+          The strategic implication is direct: organizations that learn to recognize and cultivate Caribbean American leadership talent gain access to professionals who have been training in adaptive intelligence their entire lives. Those that don't continue to lose them to companies that will.
+        </p>
+
+        <h2>Building the Future <em>On Purpose</em></h2>
+
+        <p>
+          The conversation closed on a call to intentionality — both personal and institutional. For Caribbean American professionals, Dr. Brown offered a reframe: stop auditing your cultural identity for palatability. Start treating it as the strategic advantage it actually is.
+        </p>
+
+        <p>
+          For organizations, the charge is harder. It requires examining the unconscious definitions embedded in talent systems — what counts as leadership potential, what reads as executive presence, who gets access to sponsorship. The answer, Dr. Brown suggested, will not come from a diversity statement. It will come from structural change at the level of how organizations define and recognize excellence.
+        </p>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="art-sidebar">
+
+        <div class="art-sidebar-box">
+          <h4>About the Author</h4>
+          <div class="art-author">
+            <div class="art-author-avatar">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div>
+              <div class="art-author-name">Dr. Kerry Mitchell Brown</div>
+              <div class="art-author-title">CEO, kmb Consultancy</div>
+            </div>
+          </div>
+          <p class="art-author-bio">Organizational transformation consultant, researcher, and author. Dr. Brown works with institutions and leaders navigating systemic change, with a focus on Black women's leadership in corporate America.</p>
+        </div>
+
+        <div class="art-sidebar-box art-share">
+          <h4>Share this Article</h4>
+          <div class="art-share-links">
+            <button class="share-btn">LinkedIn</button>
+            <button class="share-btn">Twitter / X</button>
+            <button class="share-btn">Copy Link</button>
+          </div>
+        </div>
+
+        <div class="art-sidebar-box art-sidebar-related">
+          <h4>Related Coverage</h4>
+          <a href="news-article.html" class="rel-item">
+            <div class="rel-num">01</div>
+            <div>
+              <div class="rel-title">Caribbean American Women Are Valuable To Corporate America Now</div>
+              <div class="rel-source">Black Enterprise</div>
+            </div>
+          </a>
+          <a href="news-article.html" class="rel-item">
+            <div class="rel-num">02</div>
+            <div>
+              <div class="rel-title">Redefining What's Possible for Black Women in Work and Life</div>
+              <div class="rel-source">Bridge To U</div>
+            </div>
+          </a>
+          <a href="news-article.html" class="rel-item">
+            <div class="rel-num">03</div>
+            <div>
+              <div class="rel-title">Why Caribbean American Women Bring a Vital Perspective to Leadership</div>
+              <div class="rel-source">Island Origins Magazine</div>
+            </div>
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <!-- MORE NEWS -->
+  <section class="more-news">
+    <div class="wrap">
+      <span class="slabel">Media Archive</span>
+      <h2 class="sec-h">More from the <em>Newsroom</em></h2>
+      <div class="newslist-mini">
+        <a href="news-article.html" class="nitem">
+          <div class="ndate">Jun 11, 2025</div>
+          <div class="ntitle">Redefining What's Possible for Black Women in Work and Life</div>
+          <div class="nsource">Bridge To U</div>
+        </a>
+        <a href="news-article.html" class="nitem">
+          <div class="ndate">Jun 4, 2025</div>
+          <div class="ntitle">Building Your Strategic Power feat. Dr. Kerry Mitchell Brown</div>
+          <div class="nsource">The *(Relate)able Podcast</div>
+        </a>
+        <a href="news-article.html" class="nitem">
+          <div class="ndate">May 26, 2025</div>
+          <div class="ntitle">Caribbean American Women Are Valuable To Corporate America Now, More Than Ever</div>
+          <div class="nsource">Black Enterprise</div>
+        </a>
+        <a href="news-article.html" class="nitem">
+          <div class="ndate">May 22, 2025</div>
+          <div class="ntitle">Why Caribbean American Women Bring a Vital Perspective to Leadership in Today's Corporate America</div>
+          <div class="nsource">Island Origins Magazine</div>
+        </a>
+        <a href="news-article.html" class="nitem">
+          <div class="ndate">Sep 9, 2024</div>
+          <div class="ntitle">Bloomberg Businessweek: Power Shift for Women</div>
+          <div class="nsource">Bloomberg Businessweek</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fg">
+        <div>
+          <div class="fbrand">Dr. Kerry <b>Mitchell Brown</b></div>
+          <p class="ftag">CEO, kmb Consultancy - Organizational Transformation Consultant - Author - Researcher</p>
+          <div class="fsoc">
+            <a href="https://www.linkedin.com">LI</a><a href="https://substack.com">SS</a><a href="https://www.youtube.com">YT</a>
+          </div>
+        </div>
+        <div class="fc">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="https://revolutionarylead.com">Revolutionary Leadership</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="client-impact.html">Client Impact</a></li>
+            <li><a href="assessment.html">Resources</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Work With Kerry</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="organizational-transformation.html">Organizational Transformation</a></li>
+            <li><a href="strategic-advising.html">Strategic Advising</a></li>
+            <li><a href="black-womens-leadership.html">Black Women's Leadership</a></li>
+            <li><a href="speaking-and-workshops.html">Speaking & Workshops</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fbot">
+        <p>© 2026 Kerry Mitchell Brown, LLC. All rights reserved.</p>
+        <a href="https://revolutionarylead.com">Revolutionary Leadership</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
