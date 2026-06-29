@@ -151,7 +151,7 @@ nav.stuck{background:rgba(26,26,46,.97);backdrop-filter:blur(12px);padding:14px 
 .shdr{margin-bottom:52px}
 
 .sgrid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--mid)}
-.scard{padding:40px 30px;border-right:1px solid var(--mid);position:relative;transition:background .25s;overflow:hidden}
+.scard{padding:40px 30px;border-right:1px solid var(--mid);position:relative;transition:background .25s;overflow:hidden;display:flex;flex-direction:column}
 .scard:last-child{border-right:none}
 .scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--mid);transition:background .25s}
 .scard:hover{background:var(--charcoal)}
@@ -258,7 +258,7 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
     <a class="nlogo" href="index.html">Dr. Kerry <b>Mitchell Brown</b></a>
     <ul class="nlinks">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="https://revolutionarylead.com">Revolutionary Leadership</a></li>
+        <li><a href="https://revolutionarylead.com/">Revolutionary Leadership</a></li>
         <li class="has-dd" tabindex="0">
           <a href="services.html" class="dd-t">Services</a>
           <ul class="dd-menu">
@@ -301,8 +301,8 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
     <p class="hs">Dr. Kerry Mitchell Brown works on the structural dynamics most consultants never touch — the ones shaping who advances, who leaves, and what your culture actually becomes.</p>
     <p class="hst">30 years of practice &nbsp;·&nbsp; 247 organizations &nbsp;·&nbsp; 3.7 million participants</p>
     <div class="hctas">
-      <a href="contact.html" class="btn bg">I Lead an Organization</a>
-      <a href="contact.html" class="btn bw">I Am a Black Woman Leader</a>
+      <a href="organizational-transformation.html" class="btn bg">I Lead an Organization</a>
+      <a href="black-womens-leadership.html" class="btn bw">I Am a Black Woman Leader</a>
     </div>
   </div>
   <div class="hbar"></div>
@@ -399,7 +399,7 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
       <li>30% reduction in leadership turnover</li>
       <li>Multi-year partnerships with Fortune 100 companies</li>
     </ul>
-    <a href="#" class="btn bg">Is This the Work Your Organization Needs?</a>
+    <a href="organizational-transformation.html" class="btn bg">Is This the Work Your Organization Needs?</a>
   </div>
   <div class="dc light rv">
     <span class="eyebrow" style="color:var(--purple)">For Black Women Executives, Senior Leaders &amp; Founders</span>
@@ -412,7 +412,7 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
       <li>600+ Black women professionals studied</li>
       <li>Research findings that challenge conventional advice</li>
     </ul>
-    <a href="#" class="btn bp">Ready to Lead From Your Full Power?</a>
+    <a href="black-womens-leadership.html" class="btn bp">Ready to Lead From Your Full Power?</a>
   </div>
 </section>
 
@@ -478,34 +478,34 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
       <h2 class="sh2">Work That Goes Where<br/>Most Consultants Stop</h2>
     </div>
     <div class="sgrid rv">
-      <div class="scard">
+      <a class="scard" href="organizational-transformation.html">
         <div class="snum">01</div>
         <div class="saud">For COOs, Chiefs of Staff &amp; Operations Leaders</div>
         <h3 class="stit">Systems-Level Transformation That Lasts</h3>
         <p class="sbod">Long-term embedded partnerships addressing structural dynamics driving turnover, misalignment, and cultural dysfunction. Not a report on a shelf. Work that becomes part of how your organization operates.</p>
         <span class="slnk">Learn More →</span>
-      </div>
-      <div class="scard">
+      </a>
+      <a class="scard" href="strategic-advising.html">
         <div class="snum">02</div>
         <div class="saud">For Senior Executives &amp; Organizational Leaders</div>
         <h3 class="stit">Strategic Partnership for High-Stakes Decisions</h3>
         <p class="sbod">Executive advisory for leaders navigating complex organizational environments, culture transformation, and high-stakes transitions. The advisor who tells you what you need to hear.</p>
         <span class="slnk">Learn More →</span>
-      </div>
-      <div class="scard">
+      </a>
+      <a class="scard" href="black-womens-leadership.html">
         <div class="snum">03</div>
         <div class="saud">For Black Women Executives, Senior Leaders &amp; Founders</div>
         <h3 class="stit">Power Built on 20 Years of Research</h3>
         <p class="sbod">One-on-one consulting grounded in Dr. Brown's longitudinal research on Black women's advancement. Not generic leadership development — a methodology built on what the data actually shows.</p>
         <span class="slnk">Learn More →</span>
-      </div>
-      <div class="scard">
+      </a>
+      <a class="scard" href="speaking-and-workshops.html">
         <div class="snum">04</div>
         <div class="saud">For Conferences, Corporations &amp; Organizations</div>
         <h3 class="stit">Research That Moves Rooms. Tools for Monday Morning.</h3>
         <p class="sbod">Twenty years of research translated into keynotes and workshops that challenge conventional leadership assumptions and give your team something practical to use this week.</p>
         <span class="slnk">Book Dr. Brown →</span>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -529,8 +529,8 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
         <p class="rlp">For more than 20 years, Dr. Brown has studied how Black women build influence, transform organizations, and lead in ways conventional models never anticipated. The findings became a framework. The framework became a book.</p>
         <p class="rlpub">Entrepreneur Books, a Forbes Imprint &nbsp;·&nbsp; August 4, 2026</p>
         <div class="rlctas">
-          <a href="#" class="btn bg">Explore the Ecosystem</a>
-          <a href="#" class="btn bw">Pre-Order the Book</a>
+          <a href="https://revolutionarylead.com/" class="btn bg">Explore the Ecosystem</a>
+          <a href="https://www.amazon.com/dp/B0GKFB4GF4" class="btn bw">Pre-Order the Book</a>
         </div>
       </div>
       <div class="ends">
@@ -571,7 +571,7 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
         <p>Black Woman Leader Testimonial — Pending</p>
       </div>
     </div>
-    <div class="tcta rv"><a href="#" class="btn bp">See Full Client Impact</a></div>
+    <div class="tcta rv"><a href="client-impact.html" class="btn bp">See Full Client Impact</a></div>
   </div>
 </section>
 
@@ -589,13 +589,13 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
         <span class="eyebrow">For Organizations</span>
         <h3 class="wch">Ready to Address What's Actually Driving the Problem?</h3>
         <p class="wcp">Address the structural dynamics driving turnover, misalignment, or cultural dysfunction. Every engagement is scoped to your specific challenges, budget, and timeline.</p>
-        <a href="#" class="btn bg">Start the Conversation</a>
+        <a href="contact.html" class="btn bg">Start the Conversation</a>
       </div>
       <div class="wc">
         <span class="eyebrow">For Black Women Leaders</span>
         <h3 class="wch">Ready to Build Real Power and Lead From Your Full Authority?</h3>
         <p class="wcp">One-on-one consulting grounded in 20 years of research on what actually drives advancement. Availability is limited — consultations by application.</p>
-        <a href="#" class="btn bt">Book Your Consultation</a>
+        <a href="contact.html" class="btn bt">Book Your Consultation</a>
       </div>
     </div>
   </div>
@@ -617,7 +617,7 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
         <div class="fc">
           <h4>Site</h4>
           <ul>
-            <li><a href="https://revolutionarylead.com">Revolutionary Leadership</a></li>
+            <li><a href="https://revolutionarylead.com/">Revolutionary Leadership</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="client-impact.html">Client Impact</a></li>
             <li><a href="assessment.html">Resources</a></li>
@@ -637,7 +637,7 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.07);pad
       </div>
       <div class="fbot">
         <p>© 2026 Kerry Mitchell Brown, LLC. All rights reserved.</p>
-        <a href="https://revolutionarylead.com">Revolutionary Leadership</a>
+        <a href="https://revolutionarylead.com/">Revolutionary Leadership</a>
       </div>
     </div>
   </footer>
